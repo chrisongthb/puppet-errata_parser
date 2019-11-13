@@ -24,7 +24,7 @@ configured separately in order to allow for correct operation of errata parser a
 
 ##  4. <a name='Setup'></a>Setup
 ###  4.1. <a name='Whaterrata_parseraffects'></a>What errata_parser affects
-* Installs ruby bundler, python3 pip and git, see errata_parser::install for details
+* Installs `ruby-bundler` and its dependencies, `python3.7`, `python3-pip`, `libapt-pkg-dev` and git, see errata_parser::install for details
 * The module will setup both errata parser and errata server
 * By default, this module creates the group and user.
 
@@ -50,3 +50,5 @@ errata_parser::server_port: 8080
 * Once cloned, this module does not check for updates in the errata_parser and errata_server git repos. You can manually update the git repos by deleting the ~errata_parser_user/git/{errata_parser,errata_server} directories.
 * There are no unit tests yet implemented
 * There is a lot of doc to do
+* This module is tested and verified on Ubuntu 18.04 LTS
+* To get this module flying on Ubuntu 16.04 LTS you have to provide a backport repo for python3.7
