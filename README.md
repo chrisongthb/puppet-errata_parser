@@ -47,7 +47,7 @@ errata_parser::server_port: 8080
 ##  6. <a name='Limitations'></a>Limitations
 * This module does not use vcsrepos as it would be elaborate to configure proxy
 * There is currently no parameter which git revision to use for the repos
-* Once cloned, this module does not check for updates in the errata_parser and errata_server git repos. You can manually update the git repos by deleting the ~errata_parser_user/git/{errata_parser,errata_server} directories.
+* Once cloned, this module does not check for updates in the errata_parser and errata_server git repos. You can manually update the git repos by deleting the `~errata_parser_user/git/{errata_parser,errata_server}` directories. This triggers a re-installation of the modules.
 * There are no unit tests yet implemented
 * There is a lot of doc to do
 * This module is tested and verified on Ubuntu 18.04 LTS
