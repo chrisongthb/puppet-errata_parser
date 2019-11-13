@@ -49,3 +49,4 @@ errata_parser::server_port: 8080
 * There is currently no parameter which git revision to use for the repos
 * Once cloned, this module does not check for updates in the errata_parser and errata_server git repos. You can manually update the git repos by deleting the ~errata_parser_user/git/{errata_parser,errata_server} directories.
 * There are no unit tests yet implemented
+* There is a lot of doc to do
