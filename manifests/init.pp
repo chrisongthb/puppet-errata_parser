@@ -12,6 +12,7 @@ class errata_parser (
   Boolean                   $manage_parser_user_and_group = true,
   Integer[0,23]             $parser_cron_job_hour         = 3,
   Integer[0,59]             $parser_cron_job_minute       = 0,
+  String[1]                 $parser_cron_command          = "${parser_user_home}/errata-parser-job.sh",
   String[1]                 $parser_service_name          = 'errata-server',
   Optional[Integer[0]]      $parser_user_password_max_age = undef,
   Optional[Integer[0]]      $parser_user_password_min_age = undef,

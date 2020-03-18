@@ -7,6 +7,7 @@ class errata_parser::config (
   Integer[1]                $server_port            = $errata_parser::server_port,
   Integer[0,23]             $parser_cron_job_hour   = $errata_parser::parser_cron_job_hour,
   Integer[0,59]             $parser_cron_job_minute = $errata_parser::parser_cron_job_minute,
+  String[1]                 $parser_cron_command    = $errata_parser::parser_cron_command,
   String[1]                 $parser_service_name    = $errata_parser::parser_service_name,
   Optional[Stdlib::Httpurl] $proxy_uri              = $errata_parser::proxy_uri,
 ){
@@ -105,14 +106,25 @@ class errata_parser::config (
     require => Exec['clone errata_parser'],
   }
 
+  # provide script for regular errata parsing
+  file { 'errata_parser_job_script':
+    ensure  => 'file',
+    path    => "${parser_user_home}/errata-parser-job.sh",
+    owner   => $parser_user_name,
+    group   => $parser_group_name,
+    mode    => '0744',
+    content => "#!/bin/bash\n[ \"\${logname}\" == 'errataparser' ] || exit 1\ncd ${parser_user_home}/git/errata_parser\n/usr/bin/bundle exec errata_parser.rb --config ${parser_user_home}/errata/config.json --debian ${parser_user_home}/errata/ --ubuntu ${parser_user_home}/errata/ --metadata\n",
+  }
+
   # deploy cron job
   cron::job { 'errata-parser':
     ensure      => 'present',
     user        => $parser_user_name,
-    command     => "cd ${parser_user_home}/git/errata_parser; /usr/bin/bundle exec errata_parser.rb --config ${parser_user_home}/errata/config.json --debian ${parser_user_home}/errata/ --ubuntu ${parser_user_home}/errata/ --metadata",
+    command     => $parser_cron_command,
     minute      => $parser_cron_job_minute,
     hour        => $parser_cron_job_hour,
     environment => $proxy_environment,
+    require     => File['errata_parser_job_script'],
   }
 
   # Provide SystemD Unit
