@@ -113,7 +113,7 @@ class errata_parser::config (
     owner   => $parser_user_name,
     group   => $parser_group_name,
     mode    => '0744',
-    content => "#!/bin/bash\n[ \"\${logname}\" == 'errataparser' ] || exit 1\ncd ${parser_user_home}/git/errata_parser\n/usr/bin/bundle exec errata_parser.rb --config ${parser_user_home}/errata/config.json --debian ${parser_user_home}/errata/ --ubuntu ${parser_user_home}/errata/ --metadata\n",
+    content => "#!/bin/bash\n[ \"\${LOGNAME}\" == 'errataparser' ] || exit 1\ncd ${parser_user_home}/git/errata_parser\n/usr/bin/bundle exec errata_parser.rb --config ${parser_user_home}/errata/config.json --debian ${parser_user_home}/errata/ --ubuntu ${parser_user_home}/errata/ --metadata\n",
   }
 
   # deploy cron job
