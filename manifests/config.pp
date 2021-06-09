@@ -145,5 +145,4 @@ WantedBy=multi-user.target
 ",
     require => Exec['install pip libraries for errata server'],
   }
-  ~> Class['systemd::systemctl::daemon_reload']
 }
