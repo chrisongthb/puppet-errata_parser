@@ -29,7 +29,7 @@ configured separately in order to allow for correct operation of errata parser a
 * By default, this module creates the group and user.
 
 ###  4.2. <a name='SetupRequirements'></a>Setup Requirements
-This module depends on [puppetlabs-stdlib](https://forge.puppet.com/puppetlabs/stdlib) and on [puppet-systemd](https://forge.puppet.com/camptocamp/systemd). The node where you include the module needs internet access, either direct or via a proxy.
+See metadata.json for module dependencies. The node on which you include the module needs internet access, either direct or via a proxy.
 
 ##  5. <a name='Usage'></a>Usage
 

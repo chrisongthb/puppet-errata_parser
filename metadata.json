@@ -1,0 +1,46 @@
+{
+  "name": "chrisonpppt-errata_parser",
+  "version": "0.1.0",
+  "author": "https://github.com/chrisongthb",
+  "summary": "",
+  "license": "Apache-2.0",
+  "source": "",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.18.0 < 8.0.0"
+    },
+    {
+      "name": "puppet/cron",
+      "version_requirement": ">= 2.0.0"
+    },
+    {
+      "name": "camptocamp/systemd",
+      "version_requirement": ">= 3.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "10"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "18.04",
+        "20.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 6.1.0 < 8.0.0"
+    }
+  ],
+  "pdk-version": "2.1.0",
+  "template-url": "pdk-default#2.1.0",
+  "template-ref": "tags/2.1.0-0-ga675ea5"
+}
