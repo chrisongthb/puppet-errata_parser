@@ -5,6 +5,8 @@
   "summary": "This module installes and configures https://github.com/ATIX-AG/errata_server and https://github.com/ATIX-AG/errata_server on a bare Ubuntu system to avoid the use of Docker.",
   "license": "Apache-2.0",
   "source": "https://github.com/chrisongthb/puppet-errata_parser",
+  "project_page": "https://github.com/chrisongthb/puppet-errata_parser",
+  "issues_url": "https://github.com/chrisongthb/puppet-errata_parser/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
