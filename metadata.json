@@ -1,10 +1,10 @@
 {
   "name": "chrisonpppt-errata_parser",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "https://github.com/chrisongthb",
-  "summary": "",
+  "summary": "This module installes and configures https://github.com/ATIX-AG/errata_server and https://github.com/ATIX-AG/errata_server on a bare Ubuntu system to avoid the use of Docker.",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/chrisongthb/puppet-errata_parser",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
